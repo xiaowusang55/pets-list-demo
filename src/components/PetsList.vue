@@ -46,7 +46,7 @@ export default {
     async fetchPetsList() {
       try {
         const resRaw = await axios.get(
-          'http://5c92dbfae7b1a00014078e61.mockapi.io/owners'
+          'https://5c92dbfae7b1a00014078e61.mockapi.io/owners'
         );
         this.list = resRaw.data || [];
       } catch (e) {
