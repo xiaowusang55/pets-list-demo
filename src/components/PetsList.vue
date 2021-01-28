@@ -12,6 +12,7 @@
 
 <script>
 import BaseLoading from '@/components/BaseLoading';
+import axios from 'axios';
 
 export default {
   name: 'PetsList',
@@ -44,10 +45,10 @@ export default {
     },
     async fetchPetsList() {
       try {
-        const resRaw = await fetch(
+        const resRaw = await axios.get(
           'http://5c92dbfae7b1a00014078e61.mockapi.io/owners'
         );
-        this.list = (await resRaw.json()) || [];
+        this.list = resRaw.data || [];
       } catch (e) {
         alert(e);
       } finally {
